@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TD5</string>
+    <string name="main_activity_title">Main Activity - Hello World !</string>
+    <string name="main_activity_textField">Un champ texte</string>
+
+    <!-- Second Activity Parts-->
+    <string name="second_activity_title">Second Activity - Watch your text</string>
+
+
+
+
+    <string name="change_activity">Changer d\'Activity</string>
+</resources>
