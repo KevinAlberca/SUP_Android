@@ -1,0 +1,33 @@
+package model;
+
+import java.util.SimpleTimeZone;
+
+import javax.swing.SingleSelectionModel;
+
+public class MemberThread extends Member implements Runnable {
+	
+	protected volatile boolean running = true;
+
+	public MemberThread(String name, Status status) {
+		super(name, status);
+	}
+	
+	public static void main(String[] args) {
+		Thread t = new Thread("BorrowLaptop");		
+		t.start();
+		
+		// Attente touche pour le main
+		try {
+			System.in.read();
+			// Instructions pour stopper
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void run() {
+
+	}
+}

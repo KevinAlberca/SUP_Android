@@ -1,0 +1,29 @@
+package model;
+
+public class Member {
+	public String name;
+	public Status status;	
+	
+	public Member(String name, Status status){
+		this.name = name;
+		this.status = status;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String students) {
+		this.status = students;
+	}
+	@Override
+	public String toString() {
+		return "Member [name=" + name + ", status=" + status + "]";
+	}
+
+}

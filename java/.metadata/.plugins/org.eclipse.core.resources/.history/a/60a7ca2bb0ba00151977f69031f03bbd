@@ -1,0 +1,13 @@
+package model;
+
+public class MemberThread extends Member implements Runnable {
+	
+	
+	public MemberThread(String name, Status status) {
+		super(name, status);
+	}
+	
+	public static void main(String[] args) {
+		Library lib = new Library(null, null);
+	}    
+}

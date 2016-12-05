@@ -1,0 +1,16 @@
+package main;
+
+import model.Member;
+
+public class book {
+	
+	
+	
+	
+	public static void main(String[] arg){
+		for (Member member : Member.values()) {
+			
+		}
+	}
+
+}

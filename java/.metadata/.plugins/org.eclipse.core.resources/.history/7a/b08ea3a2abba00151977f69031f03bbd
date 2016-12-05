@@ -1,0 +1,102 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import exception.TooManyBoorowablesException;
+import exception.UnavailableException;
+import model.Book;
+import model.Borrowable;
+import model.Document;
+import model.Hardware;
+import model.Laptop;
+import model.Laptop.OS;
+import model.Library;
+import model.Magazine;
+import model.Member;
+import model.Member.Status;
+
+public class Main {
+	
+	public static void main(String[] args) {
+
+		List<Document> docs = new ArrayList<Document>();
+		List<Hardware> hws = new ArrayList<Hardware>();
+		
+		docs.add(new Magazine("Le journal", "1"));
+		docs.add(new Magazine("Ton journal", "Avril"));
+	
+		Book book1 = new Book("T'es gonflé !", "Dupuis");
+		docs.add(book1);
+		docs.add(new Book("Le kit des 400 coups", "Dupuis"));
+		docs.add(new Book("Demande à ton père !", "Dupuis"));
+		docs.add(new Book("C'est pour ton bien !", "Dupuis"));
+		docs.add(new Book("Tu veux mon doigt ?", "Dupuis"));
+		docs.add(new Book("Dis bonjour à la dame !", "Dupuis"));
+		docs.add(new Book("Mais qu'est-ce que tu fabriques ?", "Dupuis"));
+		docs.add(new Book("N'oublie pas ta capuche !", "Dupuis"));
+		docs.add(new Book("T'as qu'à t'retenir !", "Dupuis"));
+		docs.add(new Book("C'est pas de ton âge !", "Dupuis"));
+		
+		hws.add(new Laptop("Sony", OS.LINUX));
+		hws.add(new Laptop("Dell", OS.WINDOWS));
+		
+		Library library = new Library(docs, hws);
+		
+		library.addMember(new Member("Mr Mégot", Status.TEACHER));
+		
+		Member member = new Member("Vertignasse", Status.STUDENT);
+		
+		library.addMember(member);
+		
+		System.out.println("La bibliothèque contient:");
+		library.printContent();
+		
+		System.out.println("\nEmprunts:");
+		
+		try {
+			library.borrow(member, book1);
+		} catch (UnavailableException e) {
+			System.out.println(e.getMessage());
+		} catch (TooManyBoorowablesException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		for (Document doc : docs) {
+			if (doc instanceof Borrowable) {
+				try {
+					library.borrow(member, (Borrowable) doc);
+				} catch (UnavailableException e) {
+					System.out.println(e.getMessage());
+				} catch (TooManyBoorowablesException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+		}
+		
+		System.out.println("\nOn rends un livre:");
+		
+		library.release(member, book1);
+		
+		System.out.println("\nEt on peut le ré-emprunter:");
+		
+		try {
+			library.borrow(member, book1);
+		} catch (UnavailableException e) {
+			System.out.println(e.getMessage());
+		} catch (TooManyBoorowablesException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		System.out.println("\nRésultat de la recherche de 'ton'");
+		
+		for (Document doc : library.search("ton")) {
+			System.out.println(" - " + doc);
+		}
+		
+		System.out.println("\n");
+		
+		library.showBorrowed(member);
+	
+	}
+}

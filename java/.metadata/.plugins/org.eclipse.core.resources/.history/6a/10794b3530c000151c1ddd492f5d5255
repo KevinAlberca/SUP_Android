@@ -1,0 +1,30 @@
+package Components;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.GridLayout;
+
+import javax.swing.*;
+
+public class CrypterPanel extends JPanel {
+
+	private static final long serialVersionUID = 9131970873800152347L;
+
+	public CrypterPanel() {
+		
+		
+		JPanel crypterFrame = new JPanel();
+			crypterFrame.setLayout(new BoxLayout(crypterFrame, BoxLayout.PAGE_AXIS));
+			JTextField cfTextField = new JTextField();
+			cfTextField.setSize(250, 20);
+			crypterFrame.setBackground(Color.GREEN);
+			crypterFrame.add(new JButton("Crypter"));
+			crypterFrame.add(cfTextField);
+		
+		JPanel app = new JPanel();
+		app.add(crypterFrame);
+		
+		
+		this.setVisible(true);
+		System.out.println("run");
+	}
+}

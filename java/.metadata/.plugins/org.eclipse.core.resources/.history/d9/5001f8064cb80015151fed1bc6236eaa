@@ -1,0 +1,29 @@
+package model;
+
+public class Laptop extends Hardware {
+
+	public String brand;
+	public String OS;
+	
+	public String getBrand() {
+		return brand;
+	}
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	public String getOS() {
+		return OS;
+	}
+	
+	public void setOS(String oS) {
+		OS = oS;
+	}
+
+	@Override
+	public String toString() {
+		return "Laptop [brand=" + brand + ", OS=" + OS + "]";
+	}
+	
+}

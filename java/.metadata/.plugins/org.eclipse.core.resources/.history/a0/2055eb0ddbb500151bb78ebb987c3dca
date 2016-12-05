@@ -1,0 +1,16 @@
+package model;
+
+public enum OS implements Borrowable {
+	Windows,
+	Mac,
+	Linux;
+	
+	public void setOS() {
+		
+	}
+	
+	public boolean isAvailable() {
+		
+		return true;
+	}
+}

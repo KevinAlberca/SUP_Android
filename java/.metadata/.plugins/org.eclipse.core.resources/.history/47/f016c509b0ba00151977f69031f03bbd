@@ -1,0 +1,22 @@
+package model;
+
+public class MemberThread extends Member implements Runnable {
+	
+	
+	public MemberThread(String name, Status status) {
+		super(name, status);		
+		Thread t1 = new Thread("Emprunt");
+	}
+	
+	public static void main(String[] args) {
+		Library lib = new Library(null, null);
+	}    
+	
+	
+	public void run() {
+		 for(int i = 0; i < 5000; i++){
+			System.out.println("Retrait effectué");
+		}                       
+	 }      
+	 
+}

@@ -1,0 +1,21 @@
+package model;
+
+public class Magazine extends Document implements Borrowable {
+	
+	public Integer number;
+	public boolean available;
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
+	@Override
+	public String toString() {
+		return "Magazine [title=" + title + ", number=" + number + ", available=" + available + "]";
+	}	
+	
+}

@@ -1,0 +1,23 @@
+package model;
+
+public class MemberThread extends Member implements Runnable {
+
+	public MemberThread(String name, Status status) {
+		super(name, status);
+	}
+	
+	public static void main(String[] args) {
+		Library library = new Library(null, null);
+		Thread t = new Thread("Emprunt");
+		
+		t.start();
+	}
+	
+
+	@Override
+	public void run() {	
+		for (int i = 0; i < 100; i--) {
+			System.out.println(i);
+		}
+	}    
+}

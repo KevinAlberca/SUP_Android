@@ -1,0 +1,52 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import exception.TooManyBoorowablesException;
+
+public class Member {
+
+	public enum Status {
+		STUDENT,
+		TEACHER
+	};
+	
+	private final String name;
+	private final Status status;
+	
+	private static final int LIMIT = 5;
+	
+	protected List<Borrowable> borrowables;
+
+	public Member(String name, Status status) {
+		this.name = name;
+		this.status = status;
+		this.borrowables = new ArrayList<Borrowable>();
+	}
+	
+	public List<Borrowable> getBorrowables() {
+		return borrowables;
+	}
+
+	public void addBorrowable(Borrowable borrowable) throws TooManyBoorowablesException {
+		if(borrowables.size() < LIMIT) {
+			this.borrowables.add(borrowable);
+		} else {
+			throw new TooManyBoorowablesException("Vous avez dépassé votre limite d'emprunt. Vous ne pouvez pas emprunter: " + borrowable);
+		}
+	}
+
+	public void removeBorrowable(Borrowable borrowable) {
+		this.borrowables.remove(borrowable);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+	
+}

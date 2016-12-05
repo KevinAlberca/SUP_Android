@@ -1,0 +1,23 @@
+package model;
+
+public abstract class Document implements Borrowable{
+	private String title;
+	public String available;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAvailable() {
+		return available;
+	}
+
+	public void setAvailable(String available) {
+		this.available = available;
+	}
+	
+}

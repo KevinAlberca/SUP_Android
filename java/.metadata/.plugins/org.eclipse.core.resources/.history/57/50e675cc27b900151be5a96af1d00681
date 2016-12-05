@@ -1,0 +1,19 @@
+package main;
+
+import model.*;
+
+public class Main {
+	
+	public void main(String[] args){
+		Library lib = new Library();
+		Laptop lap = new Laptop();
+		Member mem = new Member();
+		Magazine mag = new Magazine();
+		Book book = new Book();
+		
+		book.setAuthor("Fabienne Gil"); 
+		book.setAvailable(true);
+		lib.addDocument(book);
+	}
+
+}

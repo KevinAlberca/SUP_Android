@@ -1,0 +1,10 @@
+package thread;
+
+public class MemberThread extends Thread {
+	
+	public MemberThread(){
+		
+	}
+	
+	
+}

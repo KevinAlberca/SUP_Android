@@ -1,0 +1,32 @@
+package model;
+
+public class Laptop extends Hardware implements Borrowable {
+
+	public String brand;
+	public String OS;
+	public boolean borrowable;
+	
+	public String getBrand() {
+		return brand;
+	}
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	public String getOS() {
+		return OS;
+	}
+	
+	public void setOS(String oS) {
+		OS = oS;
+	}
+
+	public boolean isBorrowable() {
+		return borrowable;
+	}
+
+	public void setBorrowable(boolean borrowable) {
+		this.borrowable = borrowable;
+	}
+}

@@ -1,0 +1,17 @@
+package model;
+
+public enum Stats implements Borrowable {
+	Students,
+	Teacher;
+	
+	public boolean available;
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+	
+}

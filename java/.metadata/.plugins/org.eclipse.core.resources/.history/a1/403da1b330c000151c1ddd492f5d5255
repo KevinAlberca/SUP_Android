@@ -1,0 +1,20 @@
+package Components;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.*;
+
+public class CrypterPanel extends JPanel {
+
+	private static final long serialVersionUID = 9131970873800152347L;
+
+	public CrypterPanel() {
+		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		
+		JTextField jtf = new JTextField("String to hash", 40);
+		jtf.setSize(new Dimension(200, 50));
+		jtf.setMaximumSize(jtf.preferredSize());
+	}
+}

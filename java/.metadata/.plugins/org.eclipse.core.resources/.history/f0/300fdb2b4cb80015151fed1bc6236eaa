@@ -1,0 +1,16 @@
+package model;
+
+public abstract class Hardware  {
+	
+	public boolean broken;
+	
+
+	public boolean isBroken() {
+		return broken;
+	}
+
+	public void setBroken(boolean broken) {
+		this.broken = broken;
+	}
+	
+}

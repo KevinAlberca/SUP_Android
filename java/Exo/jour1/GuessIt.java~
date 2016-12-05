@@ -1,0 +1,26 @@
+import java.lang.Math;
+import java.util.Scanner;
+
+public class GuessIt {
+
+    public static void main(String[] args) {
+        int random = (int)(Math.random() * 100);
+        System.out.println(random);
+
+        Scanner sc = new Scanner(System.in);
+        String userInput = sc.nextLine();
+
+        while (Integer.parseInt(userInput) != random) {
+            if (Integer.parseInt(userInput) > random) {
+                System.out.println("It's Less");
+            } else {
+                System.out.println("It's More");
+            }
+            System.out.print("Try again :");
+            String line = sc.nextLine();
+        }
+
+        System.out.println("YOU WIN !");
+    }
+
+}

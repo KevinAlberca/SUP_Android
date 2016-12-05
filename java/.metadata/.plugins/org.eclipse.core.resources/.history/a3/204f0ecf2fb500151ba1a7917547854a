@@ -1,0 +1,17 @@
+package main;
+
+import model.Member;
+import enum.Status;
+
+public class book {
+	
+	
+	
+	
+	public static void main(String[] arg){
+		for (Member member : Member.values()) {
+			
+		}
+	}
+
+}

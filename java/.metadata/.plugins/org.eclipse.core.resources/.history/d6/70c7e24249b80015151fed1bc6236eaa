@@ -1,0 +1,15 @@
+package model;
+
+public class Magazine extends Document {
+	
+	public Integer number;
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+	
+}

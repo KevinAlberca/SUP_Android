@@ -1,0 +1,10 @@
+package model;
+
+public class Member {
+	private String name;
+	private Boolean status;
+	
+	public void setName(string ){
+		
+	}
+}
