@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ButterKnife</string>
+    <string name="welcome_text">Hello ! You are in an application made with ButterKnife</string>
+    <string name="easier">The syntax of this library looks like easier :)</string>
+</resources>
