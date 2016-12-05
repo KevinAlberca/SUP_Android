@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="main_activity_title">Titre de l\'application</string>
+    <string name="generate">Generer</string>
+</resources>
